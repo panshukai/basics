@@ -1,7 +1,7 @@
 # basics
 前端基础笔记
 
-###防抖和节流
+### 防抖和节流
 ```javascript
     var basic = {};
     /*
@@ -33,7 +33,7 @@
     },1000)
 ```
 
-###继承
+### 继承
 ```javascript
     /*类式继承 start*/
     function SuperClass() {
@@ -221,7 +221,7 @@
 	}
 ```
 
-###this总结
+### this总结
 ```javascript
 	/*THIS*/
 	var count=0;
@@ -333,7 +333,7 @@
 	console.log(obj.number);//10->obj.fn1执行this.number*=2以后变10
 ```
 
-###es6 es7等执行顺序判断
+### es6 es7等执行顺序判断
 ```javascript
 	async function async1(){
 		console.log('async1 start');//2

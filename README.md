@@ -418,3 +418,39 @@
    + 这个对象加入到了构造函数所在的原型链中（添加了构造函数的属性方法等）
    + 这个对象就是原型连上函数调用的this绑定
    + 没有特殊说明，返回了这个对象
+
+### 闭包
+<br/>概念：在定义的作用域以外的地方调用了此作用域内的函数，就使用了闭包
+   + 优点：和被调用的内部函数同一作用域的参数、变量、函数都会持续处于活跃状态，并不会随着外部函数的调用结束而被销毁
+   + 缺点：多次使用闭包，容易造成内存泄露，因为外部函数作用域内的参数都被保存于内存中
+   ```javascript
+	function wait(message) {
+	     setTimeout( function timer() {
+		 console.log( message ); }, 1000 ); }
+	wait( "Hello, closure!" );
+   ```
+   <br/>此代码可以引申为=>循环输出1,2,3,4,5。。。
+   +模块化概念=>一种模块化开发的手段
+   ```javascript
+	var foo = (function CoolModule(id) {
+	function change() {
+	    // 修改公共API
+	    publicAPI.identify = identify2;
+	}
+	function identify1() {
+	    alert( id );
+	}
+	function identify2() {
+	    alert( id.toUpperCase() );
+	}
+	var publicAPI = {
+	    change: change,
+	    identify: identify1
+	};
+	return publicAPI;
+	})( "foo module" );
+	foo.identify(); // foo module
+	foo.change();
+	foo.identify(); // FOO MODULE
+   ```
+   

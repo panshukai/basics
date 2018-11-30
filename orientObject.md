@@ -72,6 +72,21 @@
 ### 组合构造函数模式和原型模式
 <br/>概念：适用构造函数模式来定义实例对象上的特定接口和属性，使用原型模式来定义不会更改的属性接口
    + 优点：如上概念所述，解决了原型连上的属性接口有可能被更改的缺点
+   ```javascript
+   function Person(name,age){
+       this.name = name,
+       this.age = age
+   }
+
+   Person.prototype = {
+       constructor:Person,
+       sayName:function(){
+           alert(this.name);
+       }
+   }
+   var person1 = new Person('Neal',24);
+   var person2 = new Person('Yang',23);
+   ```
 ### 动态原型构造模式
 <br/>分析：当创建对象时，如果实例对象存在自己的方法就不继承，反之继承原型链上的方法
    ```javascript

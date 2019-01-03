@@ -1,6 +1,6 @@
 # VUE相关
 ## vue组件通信
-  1. emit + prop
+  1. v-on + $emit + prop
   ```vue
   //父页面
     <button @click='openLayer'>openLayer</button>

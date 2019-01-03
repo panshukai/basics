@@ -130,7 +130,7 @@
     </template>
     <script>
         export default{
-            //v-model默认绑定了value值，事件input
+            //v-model默认绑定了prop:"value",event:"input"
             props:['value'],
             methods:{
                 click:function(){

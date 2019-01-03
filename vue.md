@@ -27,7 +27,7 @@
     }
   //layer页面
     <template>
-        <div class="layer" :class="{'active':showLayer}">
+        <div class="layer" v-show="showLayer">
             <div class="content">
                 <span @click='click'>close</span>
             </div>
@@ -71,7 +71,7 @@
     </script>
     //layer页面
     <template>
-        <div class="layer" :class="{'active':showLayer}">
+        <div class="layer" v-show="showLayer">
             <div class="content">
                 <span @click='click'>close</span>
             </div>
@@ -87,6 +87,54 @@
             methods:{
                 click:function(){
                     this.showLayer = !this.showLayer;
+                }
+            }
+        }
+    </script>
+  ```
+  3. v-model
+  ```vue
+    //父页面
+    <template>
+      <div>
+        <Layer v-model="showLayer"></Layer>
+        <button @click='openLayer'>openLayer</button>
+      </div>
+    </template>
+    <script>
+    import Layer from './components/Layer'
+    export default {
+      name: 'App',
+      components: {
+        Layer
+      },
+      data(){
+        return {
+          showLayer:false
+        }
+      },
+      methods:{
+        openLayer:function(){
+          this.showLayer = !this.showLayer;
+        }
+      }
+    }
+    </script>
+    //layer页面
+    <template>
+        <div class="layer" v-show="value">
+            <div class="content">
+                <span @click='click'>close</span>
+            </div>
+        </div>	
+    </template>
+    <script>
+        export default{
+            //v-model默认绑定了value值，事件input
+            props:['value'],
+            methods:{
+                click:function(){
+                    this.$emit('input',false);
                 }
             }
         }

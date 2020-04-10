@@ -36,3 +36,6 @@ watch:{
 
 ### 2、问题描述：在移动端浏览器出现弹层后，手指滑动，整个页面会滚动
 解决方案：在弹层的样式上增加  overflow：auto；
+
+## ios端input foucus 页面无法弹起
+解决方案：input添加blur事件 window.scrollTo(0,0);

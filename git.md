@@ -32,9 +32,9 @@
    - 变基操作
    ```
    git rebase master
-   git rebase --continue //如有冲突(生成新的commit号)
    git add . //如有冲突
    git commit -m '' //如有冲突
+   git rebase --continue //如有冲突(生成新的commit号)
    git checkout master
    git merge feature/a //如有冲突(merge 新的commit号)
    ```

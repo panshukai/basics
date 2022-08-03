@@ -30,7 +30,7 @@
 ```
 ## css3
 ### safari浏览器兼容性问题
-问：box-shadow在safari 14上不起作用
+问：box-shadow在safari 14上不起作用<br/>
 答： 须作用于块级元素
 
 ## http2与1.1有什么区别

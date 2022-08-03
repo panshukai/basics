@@ -1,6 +1,6 @@
 ## viewport(vw + vh)
 ### package.json
-···
+```
 "devDependencies": {
     "autoprefixer": "^9.4.6",
     "less": "^4.1.2",
@@ -12,7 +12,7 @@
   "resolutions": {
     "postcss": "7.0.32"
   },
-···
+```
 ### pastcss.config.js
 ```
 'postcss-px-to-viewport': {
